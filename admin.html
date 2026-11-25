@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="visibility:hidden"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary": "#00363e", "secondary-container": "#00a572", "background": "#0f131d", "primary": "#4cd7f6", "on-background": "#dfe2f1", "error": "#ffb4ab", "tertiary-fixed": "#a2eeff", "on-tertiary-fixed-variant": "#004e5a", "on-secondary-fixed-variant": "#005236", "tertiary-fixed-dim": "#2fd9f4", "secondary-fixed-dim": "#4edea3", "inverse-surface": "#dfe2f1", "on-error": "#690005", "surface-container-low": "#171b26", "surface-tint": "#4cd7f6", "outline": "#869397", "tertiary": "#2fd9f4", "primary-fixed-dim": "#4cd7f6", "on-tertiary-container": "#00434d", "on-primary-container": "#00424f", "surface-container-high": "#262a35", "surface-container": "#1c1f2a", "outline-variant": "#3d494c", "on-surface": "#dfe2f1", "inverse-primary": "#00687a", "surface-variant": "#313540", "on-primary-fixed": "#001f26", "tertiary-container": "#00b7cf", "surface-bright": "#353944", "primary-container": "#06b6d4", "inverse-on-surface": "#2c303b", "surface-container-highest": "#313540", "secondary-fixed": "#6ffbbe", "surface": "#0f131d", "on-tertiary-fixed": "#001f25", "on-secondary-container": "#00311f", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#004e5c", "surface-dim": "#0f131d", "on-secondary": "#003824", "on-surface-variant": "#bcc9cd", "on-secondary-fixed": "#002113", "primary-fixed": "#acedff", "error-container": "#93000a", "secondary": "#4edea3", "surface-container-lowest": "#0a0e18", "on-primary": "#003640" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1.25rem", "space-sm": "0.75rem", "margin-desktop": "5rem", "space-xl": "3.5rem", "gutter-desktop": "2rem", "gutter": "1.5rem", "margin-tablet": "2.5rem", "space-lg": "2rem", "space-md": "1.25rem", "space-xs": "0.375rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-md": ["Inter"], "display-mobile": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "code-label": ["JetBrains Mono"], "headline-lg": ["Plus Jakarta Sans"], "metric-stat": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["0.8125rem", { "lineHeight": "1.5", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["1.75rem", { "lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.6", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-md": ["0.9375rem", { "lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400" }], "display-mobile": ["2.25rem", { "lineHeight": "1.15", "letterSpacing": "-0.025em", "fontWeight": "800" }], "display": ["3.75rem", { "lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["1.25rem", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }], "code-label": ["0.75rem", { "lineHeight": "1.2", "letterSpacing": "0.06em", "fontWeight": "500" }], "headline-lg": ["2.5rem", { "lineHeight": "1.2", "letterSpacing": "-0.025em", "fontWeight": "700" }], "metric-stat": ["2rem", { "lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800" }] } } } }</script><title>ahmedhany-ai — Admin Dashboard</title></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex items-center justify-center min-h-screen"><main class="w-full max-w-md mx-auto px-6 py-12"><div class="flex flex-col w-full space-y-6">
+<!-- Top Glass Header / Admin Identification Bar -->
+<header class="w-full bg-surface-container/80 backdrop-blur-md rounded-xl p-4 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative overflow-hidden"><div class="absolute -right-10 -top-10 w-28 h-28 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">ahmedhany-ai</span>
+<span class="font-code-label text-code-label text-primary font-medium px-1.5 py-0.5 rounded bg-primary/10">Admin Console</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-code-label text-code-label">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        SYS:ACTIVE
+      </span>
+</div>
+<p class="font-code-label text-code-label text-on-surface-variant truncate mt-0.5">auth: <span id="admin-email-display"></span></p>
+</div>
+</div>
+<div class="flex items-center gap-2.5 self-start sm:self-auto flex-wrap">
+<!-- Language Switcher AR / EN -->
+<div class="flex items-center p-0.5 bg-surface-container-high rounded-lg text-code-label">
+<button class="px-2 py-1 rounded bg-primary-container text-on-primary-container font-semibold transition-all" id="lang-btn-en" onclick="toggleAdminLang('en')" type="button">EN</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-all" id="lang-btn-ar" onclick="toggleAdminLang('ar')" type="button">العربية</button>
+</div>
+<a class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-body-sm text-body-sm transition-all shadow-sm" href="./index.html">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+<span id="back-site-label">Back to Public Site</span>
+</a>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-all" id="admin-sign-out" type="button">Sign out</button>
+</div></header>
+<!-- Metric Pulse Counter Summary -->
+<section class="grid grid-cols-3 gap-2.5 sm:gap-4 w-full">
+<div class="bg-surface-container/60 backdrop-blur-md p-3.5 rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute inset-x-0 top-0 h-0.5 bg-primary/40"></div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-code-label text-code-label tracking-wider uppercase">Catalog</span>
+<span class="material-symbols-outlined text-sm text-primary">folder_open</span>
+</div>
+<div class="mt-2">
+<div class="font-metric-stat text-metric-stat text-on-surface" id="catalog-count">0</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Total Works</span>
+</div>
+</div>
+<div class="bg-surface-container/60 backdrop-blur-md p-3.5 rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-0.5 bg-secondary/50"></div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-code-label text-code-label tracking-wider uppercase">Live Status</span>
+<span class="material-symbols-outlined text-sm text-secondary">verified</span>
+</div>
+<div class="mt-2">
+<div class="font-metric-stat text-metric-stat text-secondary" id="live-count">0</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Active Nodes</span>
+</div>
+</div>
+<div class="bg-surface-container/60 backdrop-blur-md p-3.5 rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-0.5 bg-tertiary-container/50"></div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-code-label text-code-label tracking-wider uppercase">Engage</span>
+<span class="material-symbols-outlined text-sm text-primary">visibility</span>
+</div>
+<div class="mt-2">
+<div class="font-metric-stat text-metric-stat text-on-surface">12.4K</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Agg. Views</span>
+</div>
+</div>
+</section>
+<nav class="grid grid-cols-3 gap-2 p-1 rounded-xl bg-surface-container-low" aria-label="Admin sections">
+<button class="px-3 py-2 rounded-lg bg-primary-container text-on-primary-container font-code-label font-semibold" type="button" data-admin-tab="projects" aria-selected="true">Projects / المشاريع</button>
+<button class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-code-label font-semibold" type="button" data-admin-tab="orders" aria-selected="false">Orders / الطلبات <span class="ml-1" id="orders-count">0</span></button>
+<button class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-code-label font-semibold" type="button" data-admin-tab="settings" aria-selected="false">Store Settings</button>
+</nav>
+<div class="space-y-6" id="projects-panel">
+<!-- Primary Section 1: Add New Project Form -->
+<section class="w-full bg-surface-container/70 backdrop-blur-md rounded-xl p-5 shadow-2xl relative">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shadow-sm"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Deploy New Project</h2>
+</div>
+<span class="font-code-label text-code-label text-on-surface-variant/70 tracking-widest uppercase">SCHEMA // V2.8</span>
+</div>
+<form class="space-y-4" id="project-form"><!-- Hidden state tracker for edit mode -->
+<input id="editing-project-id" type="hidden" value=""/>
+<div class="hidden p-2.5 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-between text-body-sm text-primary" id="edit-mode-banner">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">edit</span>
+<span>Editing: <strong class="text-on-surface" id="editing-banner-name">None</strong></span>
+</div>
+<button class="text-code-label underline hover:text-error" onclick="cancelEditProject()" type="button">Cancel Edit</button>
+</div>
+<!-- Bilingual Project Identifiers -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="project-title-en">Project Title (English) *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high transition-all placeholder:text-outline/50 shadow-inner" id="project-title-en" placeholder="e.g. AutoPrompt Pro" required="" type="text"/>
+<span class="absolute right-3 top-2.5 text-on-surface-variant/40 material-symbols-outlined text-base">title</span>
+</div>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="project-title-ar">عنوان المشروع (بالعربية) *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high transition-all placeholder:text-outline/50 shadow-inner text-right" dir="rtl" id="project-title-ar" placeholder="مثال: أوتو برومبت برو" type="text"/>
+<span class="absolute left-3 top-2.5 text-on-surface-variant/40 material-symbols-outlined text-base">translate</span>
+</div>
+</div>
+</div>
+<!-- Category & Status Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="project-category">Domain Category</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg px-3.5 py-2.5 outline-none appearance-none focus:bg-surface-container-high transition-all shadow-inner" id="project-category">
+<option value="ai">AI &amp; Automation</option>
+<option value="desktop">Desktop Software</option>
+<option value="web">Web Apps</option>
+<option value="research">Research &amp; Prototyping</option>
+</select>
+<span class="absolute right-3 top-3 text-on-surface-variant pointer-events-none material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="project-item-type">Item Type</label>
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="project-item-type">
+<option value="portfolio">Portfolio Showcase</option>
+<option value="product">Digital Product for Sale</option>
+</select>
+</div>
+<div>
+<span class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5">Release Status</span>
+<div class="grid grid-cols-3 gap-1.5 p-1 bg-surface-container-low rounded-lg">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" id="status-live" name="project-status" type="radio" value="Live"/>
+<span class="block text-center font-code-label text-code-label py-1.5 rounded text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container font-medium transition-all">Live</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" id="status-beta" name="project-status" type="radio" value="Beta"/>
+<span class="block text-center font-code-label text-code-label py-1.5 rounded text-on-surface-variant peer-checked:bg-primary-container peer-checked:text-on-primary-container font-medium transition-all">Beta</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" id="status-dev" name="project-status" type="radio" value="Dev"/>
+<span class="block text-center font-code-label text-code-label py-1.5 rounded text-on-surface-variant peer-checked:bg-surface-bright peer-checked:text-primary font-medium transition-all">Dev</span>
+</label>
+</div>
+</div>
+</div>
+<div class="hidden grid-cols-1 sm:grid-cols-2 gap-3.5 p-3 rounded-xl border border-secondary/30 bg-secondary/5" id="product-pricing-fields">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="product-price">Price *</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="product-price" type="number" min="0.01" step="0.01" placeholder="e.g. 250"/>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="product-currency">Currency</label>
+<select class="w-full bg-surface-container-low text-on-surface rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="product-currency">
+<option value="EGP">EGP (Egyptian Pound)</option>
+<option value="USD">USD (US Dollar)</option>
+</select>
+</div>
+<div class="sm:col-span-2">
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="external-payment-url">External Payment Link (optional)</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="external-payment-url" type="url" placeholder="https://gumroad.com/l/..."/>
+</div>
+<div class="sm:col-span-2">
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="delivery-url">Delivery / Download URL *</label>
+<input class="w-full bg-surface-container-low text-on-surface rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="delivery-url" type="url" placeholder="https://..."/>
+<p class="mt-1 text-xs text-on-surface-variant">Stored in the admin-only product-deliveries collection, not exposed in public project data.</p>
+</div>
+</div>
+<!-- Bilingual System Abstracts -->
+<div class="space-y-3">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="project-desc-en">Executive Abstract (English)</label>
+<textarea class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg p-3 outline-none focus:bg-surface-container-high transition-all placeholder:text-outline/50 shadow-inner resize-none" id="project-desc-en" placeholder="Provide executive overview, architecture details, and impact metrics..." rows="2"></textarea>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="project-desc-ar">الوصف التنفيذي (بالعربية)</label>
+<textarea class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg p-3 outline-none focus:bg-surface-container-high transition-all placeholder:text-outline/50 shadow-inner resize-none text-right" dir="rtl" id="project-desc-ar" placeholder="ملخص المعمارية الهندسية، تقنيات النماذج، ومقاييس الأثر باللغة العربية..." rows="2"></textarea>
+</div>
+</div>
+<!-- Tech Stack Tags -->
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5">Stack Matrix (Interactive Tags)</label>
+<div class="flex flex-wrap items-center gap-1.5 mb-2" id="tech-pill-container">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-code-label text-code-label group">Python <button class="hover:text-error ml-1 leading-none text-xs" onclick="this.parentElement.remove()" type="button">✕</button></span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-code-label text-code-label group">Ollama <button class="hover:text-error ml-1 leading-none text-xs" onclick="this.parentElement.remove()" type="button">✕</button></span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-code-label text-code-label group">Next.js <button class="hover:text-error ml-1 leading-none text-xs" onclick="this.parentElement.remove()" type="button">✕</button></span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-code-label text-code-label group">Tailwind <button class="hover:text-error ml-1 leading-none text-xs" onclick="this.parentElement.remove()" type="button">✕</button></span>
+</div>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg px-3 py-2 outline-none focus:bg-surface-container-high placeholder:text-outline/50 shadow-inner" id="tag-input" onkeydown="if(event.key === 'Enter'){ event.preventDefault(); addTechTag(); }" placeholder="Type tag &amp; press enter (e.g. PyTorch, WebGL)" type="text"/>
+<button class="px-3 bg-surface-container-high hover:bg-surface-bright text-primary font-code-label text-code-label rounded-lg transition-all flex items-center justify-center" onclick="addTechTag()" type="button">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+</div>
+</div>
+<!-- Media Assets: Cover & Dedicated Video URL -->
+<div class="space-y-3">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5">Asset Visual Cover</label>
+<div class="w-full bg-surface-container-low rounded-lg p-3 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-all group shadow-inner">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-1.5">
+<span class="material-symbols-outlined text-lg">cloud_upload</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Drag and drop render visual, or <span class="text-primary underline">browse</span></p>
+<p class="font-code-label text-code-label text-on-surface-variant/70 text-xs mt-0.5">16:9 WebP or AVIF (Max 5MB)</p>
+</div>
+<input class="mt-2 w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg px-3.5 py-2 outline-none focus:bg-surface-container-high" id="project-image-file" accept="image/*" type="file"/>
+<p class="font-code-label text-code-label text-on-surface-variant/60 text-xs mt-1">Images are resized and compressed in your browser before saving to Firestore.</p>
+<input class="mt-2 w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg px-3.5 py-2 outline-none focus:bg-surface-container-high placeholder:text-outline/50" id="project-cover-url" placeholder="Or paste external CDN asset URL" type="url"/>
+</div>
+<!-- Dedicated Project Video Field -->
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="project-video-url">Project Video URL (YouTube / Demo Video)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface font-code-label text-code-label rounded-lg pl-8 pr-3 py-2 outline-none focus:bg-surface-container-high placeholder:text-outline/40 shadow-inner" id="project-video-url" placeholder="https://youtube.com/watch?v=... or direct MP4 stream" type="url"/>
+<span class="absolute left-2.5 top-2.5 text-primary material-symbols-outlined text-sm">videocam</span>
+</div>
+<p class="font-code-label text-code-label text-on-surface-variant/60 text-xs mt-1">Integrated player displays this video preview on public portfolio detail modal.</p>
+</div>
+</div>
+<!-- URL Endpoint Inputs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1" for="repo-url">Source Repository</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface font-code-label text-code-label rounded-lg pl-8 pr-3 py-2 outline-none focus:bg-surface-container-high placeholder:text-outline/40 shadow-inner" id="repo-url" placeholder="https://github.com/ahmed/..." type="url"/>
+<span class="absolute left-2.5 top-2.5 text-on-surface-variant/60 material-symbols-outlined text-sm">code</span>
+</div>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1" for="demo-url">Production Node URL</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface font-code-label text-code-label rounded-lg pl-8 pr-3 py-2 outline-none focus:bg-surface-container-high placeholder:text-outline/40 shadow-inner" id="demo-url" placeholder="https://live-app.io" type="url"/>
+<span class="absolute left-2.5 top-2.5 text-on-surface-variant/60 material-symbols-outlined text-sm">rocket_launch</span>
+</div>
+</div>
+</div>
+<!-- Submit CTA and Cancel Button Controls -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-3 px-4 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-headline-sm font-semibold tracking-wide shadow-lg shadow-primary-container/20 hover:shadow-primary/40 flex items-center justify-center gap-2 transition-all" id="form-submit-btn" type="submit">
+<span class="material-symbols-outlined text-lg" id="submit-btn-icon">publish</span>
+<span id="submit-btn-label">Publish Project to Pipeline</span>
+</button>
+<button class="hidden py-3 px-4 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-sm text-headline-sm font-medium transition-all" id="form-cancel-btn" onclick="cancelEditProject()" type="button">
+    Cancel Edit
+  </button>
+</div></form>
+</section>
+<!-- Primary Section 2: Manage Existing Projects -->
+<section class="w-full bg-surface-container/70 backdrop-blur-md rounded-xl p-5 shadow-2xl relative space-y-4">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-sm"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Active Repositories</h2>
+</div>
+<span class="font-code-label text-code-label text-secondary font-semibold" id="deployment-count">0 DEPLOYMENTS</span>
+</div>
+<!-- Project List Card Stream -->
+<div class="space-y-3" id="projects-listing"><!-- Item 1: AH Studio -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col gap-3 relative group" id="repo-card-ah-studio">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">video_settings</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">AH Studio</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-code-label text-code-label font-medium">Live v2.4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desktop Software · AI Video Synthesis</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary-fixed-dim bg-surface-container-high px-2 py-1 rounded font-code-label text-code-label flex-shrink-0">
+<span class="material-symbols-outlined text-xs">star</span>
+<span>1.4k</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">Electron</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">C++</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="openQuickPreview('AH Studio')" title="Quick preview drawer" type="button">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span>Preview</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="populateEditForm('AH Studio')" type="button">
+<span class="material-symbols-outlined text-xs">edit</span>
+<span>Edit</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-error-container/20 hover:bg-error-container/40 text-error font-code-label text-code-label flex items-center gap-1 transition-all" onclick="deleteItem(this, 'AH Studio')" type="button">
+<span class="material-symbols-outlined text-xs">delete</span>
+<span>Drop</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Adam (آدم) -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col gap-3 relative group" id="repo-card-adam">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Adam (آدم)</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary/15 text-primary font-code-label text-code-label font-medium">Active Assistant</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">AI &amp; Automation · Arabic Multimodal LLM</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary-fixed-dim bg-surface-container-high px-2 py-1 rounded font-code-label text-code-label flex-shrink-0">
+<span class="material-symbols-outlined text-xs">star</span>
+<span>850</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">PyTorch</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">FastAPI</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="openQuickPreview('Adam')" title="Quick preview drawer" type="button">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span>Preview</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="populateEditForm('Adam')" type="button">
+<span class="material-symbols-outlined text-xs">edit</span>
+<span>Edit</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-error-container/20 hover:bg-error-container/40 text-error font-code-label text-code-label flex items-center gap-1 transition-all" onclick="deleteItem(this, 'Adam')" type="button">
+<span class="material-symbols-outlined text-xs">delete</span>
+<span>Drop</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: MERQAL Store -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col gap-3 relative group" id="repo-card-merqal">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">shopping_bag</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">MERQAL Store</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/30 text-secondary font-code-label text-code-label font-medium">Production</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Web Apps · High-Performance Hardware Store</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary-fixed-dim bg-surface-container-high px-2 py-1 rounded font-code-label text-code-label flex-shrink-0">
+<span class="material-symbols-outlined text-xs">star</span>
+<span>420</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">Next.js 14</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">Stripe</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="openQuickPreview('MERQAL Store')" title="Quick preview drawer" type="button">
+<span class="material-symbols-outlined text-xs">visibility</span>
+<span>Preview</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="populateEditForm('MERQAL Store')" type="button">
+<span class="material-symbols-outlined text-xs">edit</span>
+<span>Edit</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-error-container/20 hover:bg-error-container/40 text-error font-code-label text-code-label flex items-center gap-1 transition-all" onclick="deleteItem(this, 'MERQAL Store')" type="button">
+<span class="material-symbols-outlined text-xs">delete</span>
+<span>Drop</span>
+</button>
+</div>
+</div>
+</div></div>
+</section>
+ </div>
+<section class="hidden w-full bg-surface-container/70 backdrop-blur-md rounded-xl p-5 shadow-2xl relative space-y-4" id="orders-panel" aria-labelledby="orders-heading">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="orders-heading">Orders / الطلبات</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Incoming product orders update live.</p>
+</div>
+<span class="font-code-label text-code-label text-secondary" id="orders-pending-count">0 pending</span>
+</div>
+<div class="space-y-3" id="orders-listing" aria-live="polite">
+<p class="p-4 rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm">Loading orders…</p>
+</div>
+</section>
+<section class="hidden w-full bg-surface-container/70 backdrop-blur-md rounded-xl p-5 shadow-2xl relative space-y-4" id="settings-panel" aria-labelledby="store-settings-heading">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="store-settings-heading">Store Payment Settings</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Checkout displays these contact details. Values in firebase-config.js are used when no saved settings exist.</p>
+</div>
+<form class="space-y-4" id="store-settings-form">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="store-instapay-details">InstaPay details</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="store-instapay-details" type="text" autocomplete="off"/>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="store-vodafone-cash-number">Vodafone Cash number</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="store-vodafone-cash-number" type="tel" autocomplete="off"/>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5" for="store-whatsapp-number">WhatsApp number (include country code)</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md rounded-lg px-3.5 py-2.5 outline-none focus:bg-surface-container-high" id="store-whatsapp-number" type="tel" autocomplete="off"/>
+</div>
+<button class="py-2.5 px-4 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm font-semibold transition-all" id="store-settings-submit" type="submit">Save Store Settings</button>
+</form>
+</section>
+<!-- Interactive feedback toast container -->
+<!-- Interactive Quick Preview Modal / Drawer -->
+<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity" id="quick-preview-modal">
+<div class="bg-surface-container rounded-xl max-w-md w-full p-5 shadow-2xl relative border border-outline-variant/30 space-y-4 max-h-[90vh] overflow-y-auto">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">preview</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="preview-modal-title">Project Preview</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded" onclick="closeQuickPreview()" type="button">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="space-y-3">
+<div>
+<span class="font-code-label text-code-label text-on-surface-variant uppercase">English Title</span>
+<p class="text-body-md font-semibold text-on-surface" id="preview-modal-title-en"></p>
+</div>
+<div>
+<span class="font-code-label text-code-label text-on-surface-variant uppercase">العنوان بالعربية</span>
+<p class="text-body-md font-semibold text-on-surface text-right" dir="rtl" id="preview-modal-title-ar"></p>
+</div>
+<div>
+<span class="font-code-label text-code-label text-on-surface-variant uppercase">Description (EN / AR)</span>
+<p class="text-body-sm text-on-surface-variant mt-1" id="preview-modal-desc-en"></p>
+<p class="text-body-sm text-on-surface-variant mt-1 text-right" dir="rtl" id="preview-modal-desc-ar"></p>
+</div>
+<div>
+<span class="font-code-label text-code-label text-on-surface-variant uppercase">Demo Video URL</span>
+<p class="text-code-label text-primary truncate mt-0.5" id="preview-modal-video"></p>
+</div>
+<div class="pt-2 flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-code-label text-code-label" onclick="closeQuickPreview()" type="button">Close</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-code-label text-code-label font-semibold flex items-center gap-1.5" id="preview-modal-edit-btn" type="button">
+<span class="material-symbols-outlined text-xs">edit</span>
+<span>Edit in Pipeline</span>
+</button>
+</div>
+</div>
+</div>
+</div><div class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-code-label text-code-label shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2" id="toast-notify">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span id="toast-msg">Operation completed</span>
+</div>
+<script>
+    function addTechTag() {
+      const input = document.getElementById('tag-input');
+      const val = input.value.trim();
+      if (!val) return;
+      const container = document.getElementById('tech-pill-container');
+      const pill = document.createElement('span');
+      pill.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-code-label text-code-label group';
+      pill.appendChild(document.createTextNode(`${val} `));
+      const removeButton = document.createElement('button');
+      removeButton.type = 'button';
+      removeButton.className = 'hover:text-error ml-1 leading-none text-xs';
+      removeButton.textContent = '✕';
+      removeButton.addEventListener('click', () => pill.remove());
+      pill.appendChild(removeButton);
+      container.appendChild(pill);
+      input.value = '';
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notify');
+      const text = document.getElementById('toast-msg');
+      text.innerText = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 2500);
+    }
+
+    function triggerDeployNotification() {
+      const title = document.getElementById('project-title').value;
+      showToast(`Deployed "${title}" to portfolio index.`);
+      document.getElementById('project-form').reset();
+    }
+
+    function editNotice(name) {
+      showToast(`Loading editor buffer for ${name}...`);
+    }
+
+    function deleteItem(btn, name) {
+      if (confirm(`Deprecate and prune "${name}" from the live database?`)) {
+        const card = btn.closest('.group');
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
+        setTimeout(() => card.remove(), 200);
+        showToast(`Record "${name}" terminated.`);
+      }
+    }
+  </script>
+<script>
+const projectCatalogData = {
+  'AH Studio': {
+    titleEn: 'AH Studio',
+    titleAr: 'إيه إتش ستوديو',
+    category: 'desktop',
+    status: 'Live',
+    descEn: 'High-performance desktop suite designed for next-generation generative AI video synthesis and automated rendering.',
+    descAr: 'حزمة برمجية مكتبية فائقة الأداء مخصصة لإنتاج وتوليد الفيديو بالذكاء الاصطناعي والمعالجة الفورية.',
+    tags: ['Electron', 'C++', 'PyTorch', 'FFmpeg'],
+    videoUrl: 'https://youtube.com/watch?v=ah-studio-demo',
+    repoUrl: 'https://github.com/ahmed/ah-studio',
+    demoUrl: 'https://ahstudio.ahmedhany-ai.com'
+  },
+  'Adam': {
+    titleEn: 'Adam',
+    titleAr: 'آدم (المساعد الذكي)',
+    category: 'ai',
+    status: 'Beta',
+    descEn: 'Multimodal conversational intelligence powered by bilingual Arabic-English context engines and low-latency inference.',
+    descAr: 'نظام محادثة ذكي متعدد الوسائط يعتمد على محركات سياقية ثنائية اللغة (عربي/إنجليزي) بزمن استجابة فائق السرعة.',
+    tags: ['PyTorch', 'FastAPI', 'Ollama', 'vLLM'],
+    videoUrl: 'https://youtube.com/watch?v=adam-ai-demo',
+    repoUrl: 'https://github.com/ahmed/adam-multimodal',
+    demoUrl: 'https://adam.ahmedhany-ai.com'
+  },
+  'MERQAL Store': {
+    titleEn: 'MERQAL Store',
+    titleAr: 'متجر مِرقال',
+    category: 'web',
+    status: 'Live',
+    descEn: 'Ultra-fast headless commerce platform tailored for specialized hardware components with global Stripe settlement.',
+    descAr: 'منصة تجارة إلكترونية متطورة مخصصة لمعدات ومكونات الحوسبة المتقدمة مع نظام دفع Stripe متكامل.',
+    tags: ['Next.js 14', 'Stripe', 'Tailwind', 'PostgreSQL'],
+    videoUrl: 'https://youtube.com/watch?v=merqal-store-demo',
+    repoUrl: 'https://github.com/ahmed/merqal-store',
+    demoUrl: 'https://merqal.store'
+  }
+};
+
+function toggleAdminLang(lang) {
+  const enBtn = document.getElementById('lang-btn-en');
+  const arBtn = document.getElementById('lang-btn-ar');
+  const backLabel = document.getElementById('back-site-label');
+  if (lang === 'ar') {
+    arBtn.className = 'px-2 py-1 rounded bg-primary-container text-on-primary-container font-semibold transition-all';
+    enBtn.className = 'px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-all';
+    if (backLabel) backLabel.innerText = 'العودة للموقع العام';
+    showToast('تم تفعيل واجهة العرض الثنائية (العربية)');
+  } else {
+    enBtn.className = 'px-2 py-1 rounded bg-primary-container text-on-primary-container font-semibold transition-all';
+    arBtn.className = 'px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-all';
+    if (backLabel) backLabel.innerText = 'Back to Public Site';
+    showToast('Switched to English interface view');
+  }
+}
+
+function populateEditForm(projectName) {
+  const proj = projectCatalogData[projectName] || projectCatalogData['AH Studio'];
+  document.getElementById('editing-project-id').value = projectName;
+  
+  document.getElementById('project-title-en').value = proj.titleEn;
+  document.getElementById('project-title-ar').value = proj.titleAr;
+  document.getElementById('project-category').value = proj.category;
+  document.getElementById('project-desc-en').value = proj.descEn;
+  document.getElementById('project-desc-ar').value = proj.descAr;
+  document.getElementById('project-video-url').value = proj.videoUrl;
+  document.getElementById('repo-url').value = proj.repoUrl;
+  document.getElementById('demo-url').value = proj.demoUrl;
+  
+  if (proj.status === 'Live') document.getElementById('status-live').checked = true;
+  else if (proj.status === 'Beta') document.getElementById('status-beta').checked = true;
+  else document.getElementById('status-dev').checked = true;
+  
+  const container = document.getElementById('tech-pill-container');
+  container.innerHTML = '';
+  proj.tags.forEach(tag => {
+    const pill = document.createElement('span');
+    pill.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-code-label text-code-label group';
+    pill.innerHTML = `${tag} <button type="button" class="hover:text-error ml-1 leading-none text-xs" onclick="this.parentElement.remove()">✕</button>`;
+    container.appendChild(pill);
+  });
+  
+  document.getElementById('edit-mode-banner').classList.remove('hidden');
+  document.getElementById('editing-banner-name').innerText = proj.titleEn;
+  document.getElementById('submit-btn-label').innerText = `Update Deployment [${proj.titleEn}]`;
+  document.getElementById('submit-btn-icon').innerText = 'published_with_changes';
+  document.getElementById('form-cancel-btn').classList.remove('hidden');
+  
+  document.getElementById('project-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  showToast(`Loaded ${proj.titleEn} into editor buffer.`);
+}
+
+function cancelEditProject() {
+  document.getElementById('editing-project-id').value = '';
+  document.getElementById('project-form').reset();
+  document.getElementById('edit-mode-banner').classList.add('hidden');
+  document.getElementById('submit-btn-label').innerText = 'Publish Project to Pipeline';
+  document.getElementById('submit-btn-icon').innerText = 'publish';
+  document.getElementById('form-cancel-btn').classList.add('hidden');
+  showToast('Edit canceled. Returned to deploy mode.');
+}
+
+function openQuickPreview(projectName) {
+  const proj = projectCatalogData[projectName] || projectCatalogData['AH Studio'];
+  document.getElementById('preview-modal-title').innerText = `${proj.titleEn} — Preview`;
+  document.getElementById('preview-modal-title-en').innerText = proj.titleEn;
+  document.getElementById('preview-modal-title-ar').innerText = proj.titleAr;
+  document.getElementById('preview-modal-desc-en').innerText = proj.descEn;
+  document.getElementById('preview-modal-desc-ar').innerText = proj.descAr;
+  document.getElementById('preview-modal-video').innerText = proj.videoUrl;
+  
+  const editBtn = document.getElementById('preview-modal-edit-btn');
+  editBtn.onclick = () => {
+    closeQuickPreview();
+    populateEditForm(projectName);
+  };
+  
+  document.getElementById('quick-preview-modal').classList.remove('hidden');
+}
+
+function closeQuickPreview() {
+  document.getElementById('quick-preview-modal').classList.add('hidden');
+}
+</script><script type="module" src="./admin-firebase.js"></script></div></main></body></html>

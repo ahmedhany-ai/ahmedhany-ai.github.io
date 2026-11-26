@@ -25,6 +25,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const adminEmail = ADMIN_EMAIL.trim().toLowerCase();
+const githubProfileUrl = "https://github.com/ahmedhany-ai";
 const loginForm = document.getElementById("admin-login-form");
 const authStatus = document.getElementById("auth-status");
 const authStatusMessage = document.getElementById("auth-status-message");
@@ -61,6 +62,19 @@ function showAdminModal() {
 
 document.querySelectorAll('button[aria-label="Admin access"], #admin-trigger-btn').forEach(button => {
   button.addEventListener("click", showAdminModal);
+});
+
+const adminModal = document.getElementById("admin-modal");
+const adminCard = document.getElementById("admin-card");
+function closeAdminModal() {
+  adminModal.classList.add("opacity-0", "pointer-events-none");
+  adminCard.classList.add("scale-95");
+  adminCard.classList.remove("scale-100");
+}
+
+document.getElementById("close-admin-modal").addEventListener("click", closeAdminModal);
+adminModal.addEventListener("click", event => {
+  if (event.target === adminModal) closeAdminModal();
 });
 
 loginForm?.addEventListener("submit", async event => {
@@ -175,6 +189,19 @@ function makeProjectCard(project) {
   (Array.isArray(project.techTags) ? project.techTags : []).forEach(tag => tags.appendChild(makeTag(tag)));
   footer.appendChild(tags);
 
+  const videoUrl = safeWebUrl(project.videoUrl);
+  if (videoUrl) {
+    const previewButton = document.createElement("button");
+    previewButton.type = "button";
+    previewButton.className = "demo-video-trigger inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-primary/15 hover:bg-primary/25 text-primary border border-primary/30 transition-all font-headline-sm text-body-sm font-bold shadow-sm";
+    previewButton.dataset.title = `${project.title || "Project"} — Demo`;
+    previewButton.dataset.badge = categoryBadge.textContent;
+    previewButton.dataset.video = videoUrl;
+    previewButton.dataset.desc = project.description || "";
+    previewButton.textContent = "Watch Demo Video";
+    footer.appendChild(previewButton);
+  }
+
   if (project.itemType === "product" && Number(project.price) > 0) {
     const purchase = document.createElement("div");
     purchase.className = "flex items-center justify-between gap-3 p-3 rounded-xl bg-secondary/10 border border-secondary/20";
@@ -191,9 +218,13 @@ function makeProjectCard(project) {
   }
 
   const links = document.createElement("div");
-  links.className = "grid grid-cols-2 gap-2.5 pt-2";
+  links.className = "grid grid-cols-1 gap-2.5 pt-2";
+  const configuredGithubUrl = safeWebUrl(project.githubUrl);
+  const githubUrl = configuredGithubUrl && new URL(configuredGithubUrl).pathname !== "/"
+    ? configuredGithubUrl
+    : githubProfileUrl;
   [
-    { label: "GitHub", url: project.githubUrl, icon: "code", style: "bg-surface-container text-on-surface hover:bg-surface-container-high" },
+    { label: "GitHub", url: githubUrl, icon: "code", style: "bg-surface-container text-on-surface hover:bg-surface-container-high" },
     { label: "Live Demo", url: project.liveDemoUrl, icon: "open_in_new", style: "bg-primary text-on-primary hover:bg-tertiary" }
   ].forEach(link => {
     const url = safeWebUrl(link.url);
@@ -211,6 +242,7 @@ function makeProjectCard(project) {
     anchor.append(icon, label);
     links.appendChild(anchor);
   });
+  if (links.children.length > 1) links.classList.add("sm:grid-cols-2");
   footer.appendChild(links);
   content.append(details, footer);
   card.append(imageFrame, content);

@@ -37,7 +37,6 @@ let stopProjectListener = null;
 let stopOrdersListener = null;
 let currentOrders = [];
 
-projectListing.replaceChildren();
 tagContainer.replaceChildren();
 document.getElementById("admin-email-display").textContent = ADMIN_EMAIL;
 
@@ -86,42 +85,42 @@ document.querySelectorAll("[data-admin-tab]").forEach(button => {
       tab.classList.toggle("text-on-surface-variant", !active);
     });
   });
+});
 
-  async function loadStoreSettings() {
-    try {
-      const snapshot = await getDoc(doc(db, "settings", "store"));
-      const settings = snapshot.exists() ? snapshot.data() : {};
-      document.getElementById("store-instapay-details").value =
-        typeof settings.instapayDetails === "string" ? settings.instapayDetails : INSTAPAY_DETAILS;
-      document.getElementById("store-vodafone-cash-number").value =
-        typeof settings.vodafoneCashNumber === "string" ? settings.vodafoneCashNumber : VODAFONE_CASH_NUMBER;
-      document.getElementById("store-whatsapp-number").value =
-        typeof settings.whatsappNumber === "string" ? settings.whatsappNumber : WHATSAPP_NUMBER;
-    } catch (error) {
-      console.error("Could not load store settings:", error);
-      showToast(`Could not load store settings: ${error.message}`);
-    }
+async function loadStoreSettings() {
+  try {
+    const snapshot = await getDoc(doc(db, "settings", "store"));
+    const settings = snapshot.exists() ? snapshot.data() : {};
+    document.getElementById("store-instapay-details").value =
+      typeof settings.instapayDetails === "string" ? settings.instapayDetails : INSTAPAY_DETAILS;
+    document.getElementById("store-vodafone-cash-number").value =
+      typeof settings.vodafoneCashNumber === "string" ? settings.vodafoneCashNumber : VODAFONE_CASH_NUMBER;
+    document.getElementById("store-whatsapp-number").value =
+      typeof settings.whatsappNumber === "string" ? settings.whatsappNumber : WHATSAPP_NUMBER;
+  } catch (error) {
+    console.error("Could not load store settings:", error);
+    showToast(`Could not load store settings: ${error.message}`);
   }
+}
 
-  storeSettingsForm.addEventListener("submit", async event => {
-    event.preventDefault();
-    const submitButton = document.getElementById("store-settings-submit");
-    submitButton.disabled = true;
-    try {
-      await setDoc(doc(db, "settings", "store"), {
-        instapayDetails: document.getElementById("store-instapay-details").value.trim(),
-        vodafoneCashNumber: document.getElementById("store-vodafone-cash-number").value.trim(),
-        whatsappNumber: document.getElementById("store-whatsapp-number").value.trim(),
-        updatedAt: serverTimestamp()
-      });
-      showToast("Store payment settings saved.");
-    } catch (error) {
-      console.error("Could not save store settings:", error);
-      showToast(`Could not save store settings: ${error.message}`);
-    } finally {
-      submitButton.disabled = false;
-    }
-  });
+storeSettingsForm.addEventListener("submit", async event => {
+  event.preventDefault();
+  const submitButton = document.getElementById("store-settings-submit");
+  submitButton.disabled = true;
+  try {
+    await setDoc(doc(db, "settings", "store"), {
+      instapayDetails: document.getElementById("store-instapay-details").value.trim(),
+      vodafoneCashNumber: document.getElementById("store-vodafone-cash-number").value.trim(),
+      whatsappNumber: document.getElementById("store-whatsapp-number").value.trim(),
+      updatedAt: serverTimestamp()
+    });
+    showToast("Store payment settings saved.");
+  } catch (error) {
+    console.error("Could not save store settings:", error);
+    showToast(`Could not save store settings: ${error.message}`);
+  } finally {
+    submitButton.disabled = false;
+  }
 });
 
 function safeWebUrl(value) {

@@ -202,13 +202,13 @@
 <div class="space-y-3">
 <div>
 <label class="block font-code-label text-code-label text-on-surface-variant uppercase tracking-wider mb-1.5">Asset Visual Cover</label>
-<div class="w-full bg-surface-container-low rounded-lg p-3 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-all group shadow-inner">
+<label for="project-image-file" class="w-full bg-surface-container-low rounded-lg p-3 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-all group shadow-inner">
 <div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-1.5">
 <span class="material-symbols-outlined text-lg">cloud_upload</span>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface font-medium">Drag and drop render visual, or <span class="text-primary underline">browse</span></p>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Click to choose a project image</p>
 <p class="font-code-label text-code-label text-on-surface-variant/70 text-xs mt-0.5">16:9 WebP or AVIF (Max 5MB)</p>
-</div>
+</label>
 <input class="mt-2 w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg px-3.5 py-2 outline-none focus:bg-surface-container-high" id="project-image-file" accept="image/*" type="file"/>
 <p class="font-code-label text-code-label text-on-surface-variant/60 text-xs mt-1">Images are resized and compressed in your browser before saving to Firestore.</p>
 <input class="mt-2 w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg px-3.5 py-2 outline-none focus:bg-surface-container-high placeholder:text-outline/50" id="project-cover-url" placeholder="Or paste external CDN asset URL" type="url"/>
@@ -261,129 +261,7 @@
 <span class="font-code-label text-code-label text-secondary font-semibold" id="deployment-count">0 DEPLOYMENTS</span>
 </div>
 <!-- Project List Card Stream -->
-<div class="space-y-3" id="projects-listing"><!-- Item 1: AH Studio -->
-<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col gap-3 relative group" id="repo-card-ah-studio">
-<div class="flex items-start justify-between gap-2">
-<div class="flex items-center gap-3">
-<div class="w-11 h-11 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-xl">video_settings</span>
-</div>
-<div>
-<div class="flex items-center gap-2 flex-wrap">
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">AH Studio</h3>
-<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-code-label text-code-label font-medium">Live v2.4</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Desktop Software · AI Video Synthesis</p>
-</div>
-</div>
-<div class="flex items-center gap-1 text-primary-fixed-dim bg-surface-container-high px-2 py-1 rounded font-code-label text-code-label flex-shrink-0">
-<span class="material-symbols-outlined text-xs">star</span>
-<span>1.4k</span>
-</div>
-</div>
-<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
-<div class="flex items-center gap-1.5">
-<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">Electron</span>
-<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">C++</span>
-</div>
-<div class="flex items-center gap-1.5">
-<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="openQuickPreview('AH Studio')" title="Quick preview drawer" type="button">
-<span class="material-symbols-outlined text-xs">visibility</span>
-<span>Preview</span>
-</button>
-<button class="px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="populateEditForm('AH Studio')" type="button">
-<span class="material-symbols-outlined text-xs">edit</span>
-<span>Edit</span>
-</button>
-<button class="px-2.5 py-1.5 rounded-lg bg-error-container/20 hover:bg-error-container/40 text-error font-code-label text-code-label flex items-center gap-1 transition-all" onclick="deleteItem(this, 'AH Studio')" type="button">
-<span class="material-symbols-outlined text-xs">delete</span>
-<span>Drop</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Item 2: Adam (آدم) -->
-<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col gap-3 relative group" id="repo-card-adam">
-<div class="flex items-start justify-between gap-2">
-<div class="flex items-center gap-3">
-<div class="w-11 h-11 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
-</div>
-<div>
-<div class="flex items-center gap-2 flex-wrap">
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Adam (آدم)</h3>
-<span class="px-2 py-0.5 rounded-full bg-primary/15 text-primary font-code-label text-code-label font-medium">Active Assistant</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">AI &amp; Automation · Arabic Multimodal LLM</p>
-</div>
-</div>
-<div class="flex items-center gap-1 text-primary-fixed-dim bg-surface-container-high px-2 py-1 rounded font-code-label text-code-label flex-shrink-0">
-<span class="material-symbols-outlined text-xs">star</span>
-<span>850</span>
-</div>
-</div>
-<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
-<div class="flex items-center gap-1.5">
-<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">PyTorch</span>
-<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">FastAPI</span>
-</div>
-<div class="flex items-center gap-1.5">
-<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="openQuickPreview('Adam')" title="Quick preview drawer" type="button">
-<span class="material-symbols-outlined text-xs">visibility</span>
-<span>Preview</span>
-</button>
-<button class="px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="populateEditForm('Adam')" type="button">
-<span class="material-symbols-outlined text-xs">edit</span>
-<span>Edit</span>
-</button>
-<button class="px-2.5 py-1.5 rounded-lg bg-error-container/20 hover:bg-error-container/40 text-error font-code-label text-code-label flex items-center gap-1 transition-all" onclick="deleteItem(this, 'Adam')" type="button">
-<span class="material-symbols-outlined text-xs">delete</span>
-<span>Drop</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Item 3: MERQAL Store -->
-<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col gap-3 relative group" id="repo-card-merqal">
-<div class="flex items-start justify-between gap-2">
-<div class="flex items-center gap-3">
-<div class="w-11 h-11 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-xl">shopping_bag</span>
-</div>
-<div>
-<div class="flex items-center gap-2 flex-wrap">
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">MERQAL Store</h3>
-<span class="px-2 py-0.5 rounded-full bg-secondary-container/30 text-secondary font-code-label text-code-label font-medium">Production</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Web Apps · High-Performance Hardware Store</p>
-</div>
-</div>
-<div class="flex items-center gap-1 text-primary-fixed-dim bg-surface-container-high px-2 py-1 rounded font-code-label text-code-label flex-shrink-0">
-<span class="material-symbols-outlined text-xs">star</span>
-<span>420</span>
-</div>
-</div>
-<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
-<div class="flex items-center gap-1.5">
-<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">Next.js 14</span>
-<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-label text-code-label">Stripe</span>
-</div>
-<div class="flex items-center gap-1.5">
-<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="openQuickPreview('MERQAL Store')" title="Quick preview drawer" type="button">
-<span class="material-symbols-outlined text-xs">visibility</span>
-<span>Preview</span>
-</button>
-<button class="px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-code-label text-code-label flex items-center gap-1 transition-all" onclick="populateEditForm('MERQAL Store')" type="button">
-<span class="material-symbols-outlined text-xs">edit</span>
-<span>Edit</span>
-</button>
-<button class="px-2.5 py-1.5 rounded-lg bg-error-container/20 hover:bg-error-container/40 text-error font-code-label text-code-label flex items-center gap-1 transition-all" onclick="deleteItem(this, 'MERQAL Store')" type="button">
-<span class="material-symbols-outlined text-xs">delete</span>
-<span>Drop</span>
-</button>
-</div>
-</div>
-</div></div>
+<div class="space-y-3" id="projects-listing"><p class="p-4 rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm">Loading projects from Firestore…</p></div>
 </section>
  </div>
 <section class="hidden w-full bg-surface-container/70 backdrop-blur-md rounded-xl p-5 shadow-2xl relative space-y-4" id="orders-panel" aria-labelledby="orders-heading">
@@ -420,46 +298,7 @@
 </form>
 </section>
 <!-- Interactive feedback toast container -->
-<!-- Interactive Quick Preview Modal / Drawer -->
-<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity" id="quick-preview-modal">
-<div class="bg-surface-container rounded-xl max-w-md w-full p-5 shadow-2xl relative border border-outline-variant/30 space-y-4 max-h-[90vh] overflow-y-auto">
-<div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-xl">preview</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="preview-modal-title">Project Preview</h3>
-</div>
-<button class="text-on-surface-variant hover:text-on-surface p-1 rounded" onclick="closeQuickPreview()" type="button">
-<span class="material-symbols-outlined text-base">close</span>
-</button>
-</div>
-<div class="space-y-3">
-<div>
-<span class="font-code-label text-code-label text-on-surface-variant uppercase">English Title</span>
-<p class="text-body-md font-semibold text-on-surface" id="preview-modal-title-en"></p>
-</div>
-<div>
-<span class="font-code-label text-code-label text-on-surface-variant uppercase">العنوان بالعربية</span>
-<p class="text-body-md font-semibold text-on-surface text-right" dir="rtl" id="preview-modal-title-ar"></p>
-</div>
-<div>
-<span class="font-code-label text-code-label text-on-surface-variant uppercase">Description (EN / AR)</span>
-<p class="text-body-sm text-on-surface-variant mt-1" id="preview-modal-desc-en"></p>
-<p class="text-body-sm text-on-surface-variant mt-1 text-right" dir="rtl" id="preview-modal-desc-ar"></p>
-</div>
-<div>
-<span class="font-code-label text-code-label text-on-surface-variant uppercase">Demo Video URL</span>
-<p class="text-code-label text-primary truncate mt-0.5" id="preview-modal-video"></p>
-</div>
-<div class="pt-2 flex items-center justify-end gap-2">
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-code-label text-code-label" onclick="closeQuickPreview()" type="button">Close</button>
-<button class="px-3 py-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-code-label text-code-label font-semibold flex items-center gap-1.5" id="preview-modal-edit-btn" type="button">
-<span class="material-symbols-outlined text-xs">edit</span>
-<span>Edit in Pipeline</span>
-</button>
-</div>
-</div>
-</div>
-</div><div class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-code-label text-code-label shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2" id="toast-notify">
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-code-label text-code-label shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2" id="toast-notify">
 <span class="material-symbols-outlined text-sm">check_circle</span>
 <span id="toast-msg">Operation completed</span>
 </div>
@@ -494,66 +333,8 @@
       }, 2500);
     }
 
-    function triggerDeployNotification() {
-      const title = document.getElementById('project-title').value;
-      showToast(`Deployed "${title}" to portfolio index.`);
-      document.getElementById('project-form').reset();
-    }
-
-    function editNotice(name) {
-      showToast(`Loading editor buffer for ${name}...`);
-    }
-
-    function deleteItem(btn, name) {
-      if (confirm(`Deprecate and prune "${name}" from the live database?`)) {
-        const card = btn.closest('.group');
-        card.style.opacity = '0';
-        card.style.transform = 'scale(0.95)';
-        setTimeout(() => card.remove(), 200);
-        showToast(`Record "${name}" terminated.`);
-      }
-    }
-  </script>
+</script>
 <script>
-const projectCatalogData = {
-  'AH Studio': {
-    titleEn: 'AH Studio',
-    titleAr: 'إيه إتش ستوديو',
-    category: 'desktop',
-    status: 'Live',
-    descEn: 'High-performance desktop suite designed for next-generation generative AI video synthesis and automated rendering.',
-    descAr: 'حزمة برمجية مكتبية فائقة الأداء مخصصة لإنتاج وتوليد الفيديو بالذكاء الاصطناعي والمعالجة الفورية.',
-    tags: ['Electron', 'C++', 'PyTorch', 'FFmpeg'],
-    videoUrl: 'https://youtube.com/watch?v=ah-studio-demo',
-    repoUrl: 'https://github.com/ahmed/ah-studio',
-    demoUrl: 'https://ahstudio.ahmedhany-ai.com'
-  },
-  'Adam': {
-    titleEn: 'Adam',
-    titleAr: 'آدم (المساعد الذكي)',
-    category: 'ai',
-    status: 'Beta',
-    descEn: 'Multimodal conversational intelligence powered by bilingual Arabic-English context engines and low-latency inference.',
-    descAr: 'نظام محادثة ذكي متعدد الوسائط يعتمد على محركات سياقية ثنائية اللغة (عربي/إنجليزي) بزمن استجابة فائق السرعة.',
-    tags: ['PyTorch', 'FastAPI', 'Ollama', 'vLLM'],
-    videoUrl: 'https://youtube.com/watch?v=adam-ai-demo',
-    repoUrl: 'https://github.com/ahmed/adam-multimodal',
-    demoUrl: 'https://adam.ahmedhany-ai.com'
-  },
-  'MERQAL Store': {
-    titleEn: 'MERQAL Store',
-    titleAr: 'متجر مِرقال',
-    category: 'web',
-    status: 'Live',
-    descEn: 'Ultra-fast headless commerce platform tailored for specialized hardware components with global Stripe settlement.',
-    descAr: 'منصة تجارة إلكترونية متطورة مخصصة لمعدات ومكونات الحوسبة المتقدمة مع نظام دفع Stripe متكامل.',
-    tags: ['Next.js 14', 'Stripe', 'Tailwind', 'PostgreSQL'],
-    videoUrl: 'https://youtube.com/watch?v=merqal-store-demo',
-    repoUrl: 'https://github.com/ahmed/merqal-store',
-    demoUrl: 'https://merqal.store'
-  }
-};
-
 function toggleAdminLang(lang) {
   const enBtn = document.getElementById('lang-btn-en');
   const arBtn = document.getElementById('lang-btn-ar');
@@ -571,71 +352,4 @@ function toggleAdminLang(lang) {
   }
 }
 
-function populateEditForm(projectName) {
-  const proj = projectCatalogData[projectName] || projectCatalogData['AH Studio'];
-  document.getElementById('editing-project-id').value = projectName;
-  
-  document.getElementById('project-title-en').value = proj.titleEn;
-  document.getElementById('project-title-ar').value = proj.titleAr;
-  document.getElementById('project-category').value = proj.category;
-  document.getElementById('project-desc-en').value = proj.descEn;
-  document.getElementById('project-desc-ar').value = proj.descAr;
-  document.getElementById('project-video-url').value = proj.videoUrl;
-  document.getElementById('repo-url').value = proj.repoUrl;
-  document.getElementById('demo-url').value = proj.demoUrl;
-  
-  if (proj.status === 'Live') document.getElementById('status-live').checked = true;
-  else if (proj.status === 'Beta') document.getElementById('status-beta').checked = true;
-  else document.getElementById('status-dev').checked = true;
-  
-  const container = document.getElementById('tech-pill-container');
-  container.innerHTML = '';
-  proj.tags.forEach(tag => {
-    const pill = document.createElement('span');
-    pill.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary font-code-label text-code-label group';
-    pill.innerHTML = `${tag} <button type="button" class="hover:text-error ml-1 leading-none text-xs" onclick="this.parentElement.remove()">✕</button>`;
-    container.appendChild(pill);
-  });
-  
-  document.getElementById('edit-mode-banner').classList.remove('hidden');
-  document.getElementById('editing-banner-name').innerText = proj.titleEn;
-  document.getElementById('submit-btn-label').innerText = `Update Deployment [${proj.titleEn}]`;
-  document.getElementById('submit-btn-icon').innerText = 'published_with_changes';
-  document.getElementById('form-cancel-btn').classList.remove('hidden');
-  
-  document.getElementById('project-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  showToast(`Loaded ${proj.titleEn} into editor buffer.`);
-}
-
-function cancelEditProject() {
-  document.getElementById('editing-project-id').value = '';
-  document.getElementById('project-form').reset();
-  document.getElementById('edit-mode-banner').classList.add('hidden');
-  document.getElementById('submit-btn-label').innerText = 'Publish Project to Pipeline';
-  document.getElementById('submit-btn-icon').innerText = 'publish';
-  document.getElementById('form-cancel-btn').classList.add('hidden');
-  showToast('Edit canceled. Returned to deploy mode.');
-}
-
-function openQuickPreview(projectName) {
-  const proj = projectCatalogData[projectName] || projectCatalogData['AH Studio'];
-  document.getElementById('preview-modal-title').innerText = `${proj.titleEn} — Preview`;
-  document.getElementById('preview-modal-title-en').innerText = proj.titleEn;
-  document.getElementById('preview-modal-title-ar').innerText = proj.titleAr;
-  document.getElementById('preview-modal-desc-en').innerText = proj.descEn;
-  document.getElementById('preview-modal-desc-ar').innerText = proj.descAr;
-  document.getElementById('preview-modal-video').innerText = proj.videoUrl;
-  
-  const editBtn = document.getElementById('preview-modal-edit-btn');
-  editBtn.onclick = () => {
-    closeQuickPreview();
-    populateEditForm(projectName);
-  };
-  
-  document.getElementById('quick-preview-modal').classList.remove('hidden');
-}
-
-function closeQuickPreview() {
-  document.getElementById('quick-preview-modal').classList.add('hidden');
-}
 </script><script type="module" src="./admin-firebase.js"></script></div></main></body></html>
